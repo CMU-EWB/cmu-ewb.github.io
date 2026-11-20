@@ -5,7 +5,7 @@ title: Home
 {% assign s = site.data.settings %}{% assign home = site.data.home %}
 <section class="hero" {% if home.hero_image and home.hero_image != "" %}style="--hero-img:url('{{ home.hero_image | relative_url }}')"{% endif %}>
   <div class="wrap hero-inner">
-    <p class="eyebrow">{{ s.chapter_name }} · {{ s.school }}</p>
+    <p class="eyebrow">{{ s.school }}</p>
     <h1>{{ home.hero_title }}</h1>
     <p class="lead">{{ home.hero_text }}</p>
     <div class="btn-row">

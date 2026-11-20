@@ -4,7 +4,7 @@
     <div>
       <strong>{{ s.chapter_name }}</strong>
       <p>{{ s.school }}</p>
-      <p class="muted small">A student chapter. This site is run by student officers and is not an official site of Engineers Without Borders USA or {{ s.school }}.</p>
+      <p class="muted small">This site is run by the chapter's student officers.</p>
     </div>
     <div>
       <strong>Meetings</strong>
@@ -19,5 +19,5 @@
       </p>
     </div>
   </div>
-  <div class="wrap footer-base small muted">© {{ site.time | date: "%Y" }} {{ s.chapter_name }}</div>
+  <div class="wrap footer-base small muted">© {{ site.time | date: "%Y" }} {{ s.chapter_name }} · {{ s.school }}</div>
 </footer>

@@ -1,6 +1,6 @@
 # Site-wide technical settings. Officers: edit club info in the
 # "Site settings" section of the editing panel instead of this file.
-title: "Engineers Without Borders – Chapter Name"
+title: "Engineers Without Borders USA | Colorado Mesa University Chapter"
 description: "A student chapter of engineers and problem-solvers building sustainable projects with communities."
 url: ""        # e.g. https://ewb-cmu.github.io (set at launch)
 baseurl: ""    # leave empty when the repo is named <org>.github.io
