@@ -13,7 +13,7 @@ layout: default
     <div class="join-card">
       <h3>1. Fill out the interest form</h3>
       <p>Takes two minutes. We'll add you to our email list and group chat.</p>
-      <a class="btn btn-primary" href="{{ s.join_form }}">Interest form</a>
+      {% if s.join_form contains "http" %}<a class="btn btn-primary" href="{{ s.join_form }}">Interest form</a>{% elsif s.join_form and s.join_form != "" %}<p><strong>{{ s.join_form }}</strong></p>{% endif %}
     </div>
     <div class="join-card">
       <h3>2. Come to a meeting</h3>
