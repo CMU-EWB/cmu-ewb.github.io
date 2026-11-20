@@ -1,8 +1,7 @@
 ---
 title: About us
-intro: "Who we are, what we believe, and how we work."
+intro: Who we are, what we believe, and how we work.
 ---
-
 ## Our mission
 
 *Placeholder: replace with your chapter's mission statement.* We partner with communities to meet their basic human needs through sustainable engineering projects, while giving students real-world experience in design, teamwork and leadership.
@@ -19,8 +18,3 @@ Every project follows a full engineering cycle: assessment, design, implementati
 
 ## Our history
 
-*Placeholder: tell the story of how the chapter started, key milestones, and what you're proudest of.*
-
-## Faculty advisor
-
-*Placeholder: advisor name, department and a sentence about them.*
