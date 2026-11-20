@@ -3,10 +3,7 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href="{{ '/' | relative_url }}">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 32 32" width="32" height="32"><circle cx="16" cy="16" r="15" fill="currentColor"/><path d="M6 20 L13 11 L18 17 L21 13 L26 20 Z" fill="#fff"/></svg>
-      </span>
-      <span class="brand-text"><strong>{{ s.chapter_name }}</strong><small>{{ s.school }}</small></span>
+      <img src="{{ '/assets/img/logo-horizontal.png' | relative_url }}" alt="{{ s.chapter_name }} | {{ s.school }}" width="234" height="50">
     </a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
       <span></span><span></span><span></span>

@@ -151,3 +151,6 @@ img { max-width: 100%; display: block; }
 .footer-base { border-top: 1px solid #22313f; margin-top: 28px; padding-top: 18px; }
 @media (max-width: 720px) { .footer-grid { grid-template-columns: 1fr; } .event { padding: 14px; gap: 14px; } }
 .section-tight { padding-top: 0; }
+.brand img { height: 58px; width: auto; }
+.footer-logo { height: 50px; width: auto; margin-bottom: 10px; }
+@media (max-width: 400px) { .brand img { height: 48px; } }
