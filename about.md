@@ -4,7 +4,7 @@ intro: Who we are, what we believe, and how we work.
 ---
 ## Our mission
 
-*Placeholder: replace with your chapter's mission statement.* We partner with communities to meet their basic human needs through sustainable engineering projects, while giving students real-world experience in design, teamwork and leadership.
+We partner with communities to meet their basic human needs through sustainable engineering projects, while giving students real-world experience in design, teamwork and leadership.
 
 ## What we do
 
