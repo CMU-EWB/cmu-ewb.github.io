@@ -1,0 +1,63 @@
+---
+layout: default
+title: Home
+---
+{% assign s = site.data.settings %}{% assign home = site.data.home %}
+<section class="hero" {% if home.hero_image and home.hero_image != "" %}style="--hero-img:url('{{ home.hero_image | relative_url }}')"{% endif %}>
+  <div class="wrap hero-inner">
+    <p class="eyebrow">{{ s.chapter_name }} · {{ s.school }}</p>
+    <h1>{{ home.hero_title }}</h1>
+    <p class="lead">{{ home.hero_text }}</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="{{ '/join/' | relative_url }}">Join the chapter</a>
+      <a class="btn btn-ghost" href="{{ '/projects/' | relative_url }}">See our projects</a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section">
+  <div class="grid-3">
+    {% for h in home.highlights %}
+    <div class="feature">
+      <span class="feature-num">0{{ forloop.index }}</span>
+      <h3>{{ h.title }}</h3>
+      <p>{{ h.text }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Our projects</h2>
+      <a class="link-arrow" href="{{ '/projects/' | relative_url }}">All projects →</a>
+    </div>
+    {% assign projects = site.projects | sort: "order" %}
+    <div class="grid-3">
+      {% for p in projects limit: 3 %}{% include project-card.html p=p %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="wrap section">
+  <div class="section-head">
+    <h2>Upcoming events</h2>
+    <a class="link-arrow" href="{{ '/events/' | relative_url }}">Full calendar →</a>
+  </div>
+  {% assign events = site.events | sort: "date" %}
+  <div class="event-list" data-upcoming-only data-limit="3">
+    {% for e in events %}{% include event-card.html e=e %}{% endfor %}
+  </div>
+  <p class="muted empty-note" hidden>No upcoming events posted yet. Check back soon!</p>
+</section>
+
+<section class="wrap section section-tight">
+  <div class="cta-band">
+    <div>
+      <h2>Come to a meeting</h2>
+      <p>{{ s.meeting_day }} · {{ s.meeting_location }}. No experience needed.</p>
+    </div>
+    <a class="btn btn-light" href="{{ '/join/' | relative_url }}">How to join</a>
+  </div>
+</section>

@@ -1,0 +1,17 @@
+{% assign e = include.e %}
+<article class="event" data-date="{{ e.end_date | default: e.date | date: '%Y-%m-%d' }}">
+  <div class="event-date" aria-hidden="true">
+    <span class="m">{{ e.date | date: "%b" }}</span>
+    <span class="d">{{ e.date | date: "%-d" }}</span>
+  </div>
+  <div class="event-body">
+    <h3>{{ e.title }}</h3>
+    <p class="muted small">
+      {{ e.date | date: "%A, %B %-d, %Y" }}{% if e.end_date and e.end_date != "" %} – {{ e.end_date | date: "%B %-d" }}{% endif %}
+      {% if e.time and e.time != "" %} · {{ e.time }}{% endif %}
+      {% if e.location and e.location != "" %} · {{ e.location }}{% endif %}
+    </p>
+    {% if e.content != "" %}<div class="prose small-prose">{{ e.content | markdownify }}</div>{% endif %}
+    {% if e.link and e.link != "" %}<a class="link-arrow" href="{{ e.link }}">{{ e.link_text | default: "Details / RSVP" }} →</a>{% endif %}
+  </div>
+</article>

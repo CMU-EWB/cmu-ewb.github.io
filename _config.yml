@@ -1,0 +1,41 @@
+# Site-wide technical settings. Officers: edit club info in the
+# "Site settings" section of the editing panel instead of this file.
+title: "Engineers Without Borders – Chapter Name"
+description: "A student chapter of engineers and problem-solvers building sustainable projects with communities."
+url: ""        # e.g. https://ewb-cmu.github.io (set at launch)
+baseurl: ""    # leave empty when the repo is named <org>.github.io
+
+markdown: kramdown
+permalink: pretty
+timezone: America/Denver
+future: true   # show events with future dates
+
+collections:
+  events:
+    output: false
+  projects:
+    output: true
+    permalink: /projects/:name/
+  officers:
+    output: false
+
+defaults:
+  - scope: { path: "" }
+    values: { layout: page }
+  - scope: { path: "", type: projects }
+    values: { layout: project }
+
+nav:
+  - { title: Home, url: / }
+  - { title: About, url: /about/ }
+  - { title: Projects, url: /projects/ }
+  - { title: Events, url: /events/ }
+  - { title: Officers, url: /officers/ }
+  - { title: Join, url: /join/ }
+
+exclude:
+  - docs/
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - .pages.yml

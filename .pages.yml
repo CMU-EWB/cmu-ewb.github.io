@@ -1,0 +1,127 @@
+# Pages CMS configuration: this defines the officer editing panel at https://app.pagescms.org
+media:
+  input: assets/uploads
+  output: /assets/uploads
+  categories: [image]
+
+content:
+  # ---------- Repeating items ----------
+  - name: events
+    label: Events
+    description: "Meetings, workshops and trips. Past events move to the 'Past' list on the site automatically."
+    type: collection
+    path: _events
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, date, location]
+      primary: title
+      default: { sort: date, order: desc }
+    fields:
+      - { name: title, label: Event name, type: string, required: true }
+      - { name: date, label: Date, type: date, required: true, options: { format: "yyyy-MM-dd" } }
+      - { name: end_date, label: End date (multi-day events only), type: date, options: { format: "yyyy-MM-dd" } }
+      - { name: time, label: Time, type: string, description: "e.g. 6:00 PM" }
+      - { name: location, label: Location, type: string }
+      - { name: link, label: RSVP or details link, type: string }
+      - { name: link_text, label: Link button text, type: string, description: "Defaults to 'Details / RSVP'" }
+      - { name: body, label: Description, type: rich-text }
+
+  - name: projects
+    label: Projects
+    type: collection
+    path: _projects
+    filename: "{primary}.md"
+    view:
+      fields: [title, status, order]
+      primary: title
+      default: { sort: order, order: asc }
+    fields:
+      - { name: title, label: Project name, type: string, required: true }
+      - { name: summary, label: Short summary (shown on cards), type: text, required: true }
+      - { name: location, label: Location, type: string }
+      - name: status
+        label: Status
+        type: select
+        options: { values: [Active, In design, Ongoing, Completed] }
+      - { name: image, label: Main photo, type: image }
+      - { name: order, label: Display order (1 = first), type: number }
+      - { name: body, label: Full project page, type: rich-text }
+
+  - name: officers
+    label: Officers
+    description: "One entry per officer. Delete entries for people who leave and add new ones each year."
+    type: collection
+    path: _officers
+    filename: "{primary}.md"
+    view:
+      fields: [name, role, order]
+      primary: name
+      default: { sort: order, order: asc }
+    fields:
+      - { name: name, label: Full name, type: string, required: true }
+      - { name: role, label: Position, type: string, required: true }
+      - { name: major, label: Major, type: string }
+      - { name: year, label: Class year, type: string, description: "e.g. Junior, or Class of 2028" }
+      - { name: email, label: Email (optional, shown publicly), type: string }
+      - { name: photo, label: Headshot (square works best), type: image }
+      - { name: order, label: Display order (1 = first), type: number }
+      - { name: body, label: Short bio, type: rich-text }
+
+  # ---------- Single pages ----------
+  - name: home
+    label: Home page
+    type: file
+    path: _data/home.yml
+    format: yaml
+    fields:
+      - { name: hero_title, label: Big headline, type: string }
+      - { name: hero_text, label: Intro paragraph, type: text }
+      - { name: hero_image, label: Background photo (optional), type: image }
+      - name: highlights
+        label: Three highlight boxes
+        type: object
+        list: { min: 1, max: 6 }
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: text, label: Text, type: text }
+
+  - name: about
+    label: About page
+    type: file
+    path: about.md
+    format: yaml-frontmatter
+    fields:
+      - { name: title, label: Page title, type: string }
+      - { name: intro, label: Subtitle, type: string }
+      - { name: body, label: Page content, type: rich-text }
+
+  - name: join
+    label: Join page (FAQ)
+    description: "Meeting time, email and form link are edited under Site settings."
+    type: file
+    path: join.md
+    format: yaml-frontmatter
+    fields:
+      - { name: title, label: Page title, type: string }
+      - { name: intro, label: Subtitle, type: string }
+      - { name: layout, label: Layout, type: string, hidden: true, default: join }
+      - { name: body, label: FAQ and extra content, type: rich-text }
+
+  - name: settings
+    label: Site settings
+    description: "Club name, contact info and meeting details used across the whole site."
+    type: file
+    path: _data/settings.yml
+    format: yaml
+    fields:
+      - { name: chapter_name, label: Chapter name, type: string }
+      - { name: school, label: School, type: string }
+      - { name: tagline, label: Tagline (used by search engines), type: string }
+      - { name: email, label: Club email, type: string }
+      - { name: meeting_day, label: Meeting day & time, type: string }
+      - { name: meeting_location, label: Meeting location, type: string }
+      - { name: join_form, label: Interest form link, type: string }
+      - { name: instagram, label: Instagram link, type: string }
+      - { name: linkedin, label: LinkedIn link, type: string }
+      - { name: donate_link, label: Donation link (leave blank to hide), type: string }
+      - { name: short_name, label: Short name, type: string, hidden: true }

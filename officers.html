@@ -1,0 +1,23 @@
+---
+wide: true
+title: Officers
+intro: "Meet the student leadership team. Reach out to any of us with questions!"
+---
+{% assign officers = site.officers | sort: "order" %}
+<div class="officer-grid">
+  {% for o in officers %}
+  <article class="officer">
+    {% if o.photo and o.photo != "" %}
+      <img class="avatar" src="{{ o.photo | relative_url }}" alt="Photo of {{ o.name }}">
+    {% else %}
+      {% assign parts = o.name | split: " " %}
+      <div class="avatar avatar-initials" aria-hidden="true">{{ parts.first | slice: 0 }}{{ parts.last | slice: 0 }}</div>
+    {% endif %}
+    <h3>{{ o.name }}</h3>
+    <p class="role">{{ o.role }}</p>
+    {% if o.major %}<p class="muted small">{{ o.major }}{% if o.year %} · {{ o.year }}{% endif %}</p>{% endif %}
+    <div class="small-prose">{{ o.content | markdownify }}</div>
+    {% if o.email and o.email != "" %}<a class="small" href="mailto:{{ o.email }}">{{ o.email }}</a>{% endif %}
+  </article>
+  {% endfor %}
+</div>

@@ -1,0 +1,36 @@
+---
+layout: default
+---
+{% assign s = site.data.settings %}
+<section class="page-hero">
+  <div class="wrap">
+    <h1>{{ page.title }}</h1>
+    {% if page.intro %}<p class="lead">{{ page.intro }}</p>{% endif %}
+  </div>
+</section>
+<section class="wrap page-body">
+  <div class="join-grid">
+    <div class="join-card">
+      <h3>1. Fill out the interest form</h3>
+      <p>Takes two minutes. We'll add you to our email list and group chat.</p>
+      <a class="btn btn-primary" href="{{ s.join_form }}">Interest form</a>
+    </div>
+    <div class="join-card">
+      <h3>2. Come to a meeting</h3>
+      <p><strong>{{ s.meeting_day }}</strong><br>{{ s.meeting_location }}</p>
+    </div>
+    <div class="join-card">
+      <h3>3. Pick a project team</h3>
+      <p>Join a project team that fits your interests, or help with outreach, fundraising or communications.</p>
+    </div>
+  </div>
+  <div class="prose">
+    {{ content }}
+    <h2>Contact</h2>
+    <p>Email us at <a href="mailto:{{ s.email }}">{{ s.email }}</a>{% if s.instagram != "" %} or message us on <a href="{{ s.instagram }}">Instagram</a>{% endif %}.</p>
+    {% if s.donate_link != "" %}
+    <h2>Support our work</h2>
+    <p>Our projects are funded by donations and grants. <a href="{{ s.donate_link }}">Make a donation</a>.</p>
+    {% endif %}
+  </div>
+</section>

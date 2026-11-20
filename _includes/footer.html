@@ -1,0 +1,23 @@
+{% assign s = site.data.settings %}
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <strong>{{ s.chapter_name }}</strong>
+      <p>{{ s.school }}</p>
+      <p class="muted small">A student chapter. This site is run by student officers and is not an official site of Engineers Without Borders USA or {{ s.school }}.</p>
+    </div>
+    <div>
+      <strong>Meetings</strong>
+      <p>{{ s.meeting_day }}<br>{{ s.meeting_location }}</p>
+    </div>
+    <div>
+      <strong>Contact</strong>
+      <p><a href="mailto:{{ s.email }}">{{ s.email }}</a></p>
+      <p class="social">
+        {% if s.instagram and s.instagram != "" %}<a href="{{ s.instagram }}">Instagram</a>{% endif %}
+        {% if s.linkedin and s.linkedin != "" %}<a href="{{ s.linkedin }}">LinkedIn</a>{% endif %}
+      </p>
+    </div>
+  </div>
+  <div class="wrap footer-base small muted">© {{ site.time | date: "%Y" }} {{ s.chapter_name }}</div>
+</footer>

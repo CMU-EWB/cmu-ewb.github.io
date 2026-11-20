@@ -1,0 +1,15 @@
+---
+title: Events
+intro: "General meetings, workshops, fundraisers and conferences. Everyone is welcome."
+---
+{% assign events = site.events | sort: "date" %}
+<h2>Upcoming</h2>
+<div class="event-list" data-upcoming-only>
+  {% for e in events %}{% include event-card.html e=e %}{% endfor %}
+</div>
+<p class="muted empty-note" hidden>No upcoming events posted yet. Check back soon!</p>
+<h2 class="past-heading" hidden>Past events</h2>
+<div class="event-list past-list" data-past-only>
+  {% assign past = events | reverse %}
+  {% for e in past %}{% include event-card.html e=e %}{% endfor %}
+</div>

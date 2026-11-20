@@ -1,0 +1,9 @@
+---
+wide: true
+title: Projects
+intro: "Our current and past projects with partner communities, both abroad and close to home."
+---
+{% assign projects = site.projects | sort: "order" %}
+<div class="grid-3">
+  {% for p in projects %}{% include project-card.html p=p %}{% endfor %}
+</div>

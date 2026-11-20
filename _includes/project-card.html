@@ -1,0 +1,13 @@
+{% assign p = include.p %}
+<a class="card project-card" href="{{ p.url | relative_url }}">
+  <div class="card-img {% unless p.image and p.image != "" %}card-img-empty{% endunless %}" {% if p.image and p.image != "" %}style="background-image:url('{{ p.image | relative_url }}')"{% endif %}>
+    {% unless p.image and p.image != "" %}<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 48 L24 28 L34 40 L42 30 L56 48 Z" fill="currentColor"/><circle cx="46" cy="18" r="6" fill="currentColor"/></svg>{% endunless %}
+    {% if p.status %}<span class="pill pill-{{ p.status | slugify }}">{{ p.status }}</span>{% endif %}
+  </div>
+  <div class="card-body">
+    <h3>{{ p.title }}</h3>
+    {% if p.location %}<p class="muted small">📍 {{ p.location }}</p>{% endif %}
+    <p>{{ p.summary }}</p>
+    <span class="link-arrow">Read more →</span>
+  </div>
+</a>
