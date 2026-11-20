@@ -1,11 +1,9 @@
-chapter_name: "Engineers Without Borders USA"
-school: "Colorado Mesa University Chapter"
-short_name: "EWB"
-tagline: "Engineering a better world, one community at a time."
-email: "ewb@example.edu"
-instagram: "https://instagram.com/"
-linkedin: ""
-meeting_day: "Tuesdays, 6:00 PM"
-meeting_location: "Engineering Building, Room 101"
-join_form: "https://forms.gle/your-form-link"
-donate_link: ""
+chapter_name: Engineers Without Borders USA
+school: Colorado Mesa University
+tagline: Engineering a better world, one community at a time.
+email: ewb@example.edu
+meeting_day: Fridays, 5:00 PM
+meeting_location: Confluence Hall, Room 110
+join_form: https://forms.gle/your-form-link
+instagram: https://instagram.com/
+short_name: EWB
